@@ -12,6 +12,7 @@ const Cart = props => {
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
+    console.log(id);
     cartCtx.removeItem(id);
   };
 
@@ -22,6 +23,7 @@ const Cart = props => {
   const cartItems = <ul className={classes['cart-items']}>
     {cartCtx.items.map((item) => (
       <CartItem
+        id={item.id}
         key={item.id}
         name={item.name}
         amount={item.amount}
